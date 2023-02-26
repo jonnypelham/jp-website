@@ -1,0 +1,23 @@
+{
+  "name": "jp-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "scripts": {
+    "start": "npx eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonnypelham/jp-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonnypelham/jp-website/issues"
+  },
+  "homepage": "https://github.com/jonnypelham/jp-website#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+}
