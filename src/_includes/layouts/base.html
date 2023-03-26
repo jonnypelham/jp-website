@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{ title }}</title>
+
+    <link href="/css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="page-layout">
-      {% include "partials/site-head.html" %}
-      <div class="page-content">
-        <main class="main">{% block content %}{% endblock %}</main>
-      </div>
-    </div>
+    {% include "partials/site-head.html" %}
+    <main>{% block content %}{% endblock %}</main>
   </body>
 </html>
