@@ -5,7 +5,8 @@
   "main": ".eleventy.js",
   "scripts": {
     "start": "npx eleventy --serve",
-    "build:eleventy": "eleventy"
+    "build:eleventy": "eleventy",
+    "build": "run-s -l build:eleventy"
   },
   "repository": {
     "type": "git",
