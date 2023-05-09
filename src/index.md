@@ -1,4 +1,5 @@
 ---
+title: Jonathan Pelham Design
 layout: "layouts/home.html"
 image: "/img/ok-mr-field.jpg"
 ---

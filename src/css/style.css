@@ -1,38 +1,64 @@
+:root {
+  --color-white: rgb(245, 245, 242);
+  --color-grey: rgb(220, 220, 217);
+  --color-black: rgb(25, 25, 25);
+  --color-secondary: rgb(255, 221, 0);
+  --color-highlight: rgb(255, 255, 0);
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: #efefea;
+  background: var(--color-white);
   margin: 0;
+  font-family: "DM Sans", Segoe UI, system-ui, -apple-system, sans-serif;
+  font-size: 1.25em;
+  color: var(--color-black);
 }
 
-.bio,
 main {
-  padding: 2rem 4vw 0;
+  padding: 2rem 4vw 6rem;
 }
 
-h1 {
-  font-size: 1.5em;
+header {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem 6rem;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6rem 6vw 4rem;
+  margin: 0 4vw;
+  font-size: calc(1em + 2 * ((100vw - 320px) / 960));
+}
+
+#logo {
+  width: 4rem;
+  flex: 0;
+  align-self: flex-start;
+  padding: 6px 0 4rem;
+}
+
+.info-flex {
+  flex: 1 800px;
+}
+
+#bio {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem 2rem;
+}
+
+#bio > p {
+  flex: 1 0 19rem; /* flexbase controls col stacking */
   margin: 0;
-  display: inline;
-  width: auto;
-  background: #fa0;
+  padding-bottom: 0.5em;
 }
 
-.bio {
-  background-color: lightcyan;
-  gap: 2rem;
-}
-
-.logo {
-  max-width: 100px;
-  background-color: aqua;
-}
-
-.bio > p {
-  font-size: 1.5em;
-  background-color: chartreuse;
+.contact {
+  width: 100%;
+  padding: 1rem 0 0;
 }
 
 .image-grid {
@@ -48,13 +74,62 @@ img {
   height: auto;
 }
 
-#wide {
-  grid-column: span 2;
-  /* grid-col-span: 2; */
+/* -- LINK STYLING -- */
+
+a {
+  color: var(--color-black);
+  display: inline-block;
+  margin-block-end: 0.5rem;
+  margin-inline-end: 0.5rem;
+  text-decoration-line: underline;
+  text-decoration-thickness: 10%;
+  text-underline-offset: 3px;
 }
 
-@media (max-width: 570px) {
-  #wide {
-    grid-column: span 1;
+a:where(:hover, :focus) {
+  text-decoration-color: var(--color-black);
+  background-color: var(--color-secondary);
+  text-decoration: none;
+}
+
+/* tabbing through links */
+a:focus {
+  background-color: var(--color-secondary);
+  color: var(--color-black);
+}
+
+.icon {
+  stroke: var(--color-black);
+  display: inline-block;
+}
+
+.icon:hover,
+.icon:focus {
+  stroke: var(--color-white);
+  fill: var(--color-black);
+}
+
+/* Manual orphan prevention */
+span.nobreak {
+  white-space: nowrap;
+}
+
+/* footer {
+  font-size: calc(0.7em + 2 * ((100vw - 320px) / 960));
+  padding: 4rem 6vw;
+} */
+
+@media (max-width: 800px) {
+  /* Centre type on one column layouts */
+  header {
+    text-align: center;
+  }
+}
+
+@media (inverted-colors) {
+  /* Images do not have colour inverted if user’s screen is set to invert */
+  img,
+  video {
+    filter: invert(100%);
   }
 }
